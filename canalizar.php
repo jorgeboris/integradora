@@ -3,7 +3,7 @@
 	$conexion=mysqli_connect('localhost','root','','exardb');
 ?>
  
-
+<title>Canalizar</title>
 <div class="container">
 	<div class="starter-template">
 		<br>
@@ -46,4 +46,4 @@
 	</div>
 </div>
 
-<?php include 'partials/footer.php';?>
+<?php require_once 'templates/footer.php';?>

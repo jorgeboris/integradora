@@ -14,7 +14,7 @@ if(!isset($_SESSION['logged_in'])){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="muni">
-    <title>Página de inicio</title>
+    <title>EXAR</title>
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
    
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@ if(!isset($_SESSION['logged_in'])){
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">EXAR</a>
+  <a class="navbar-brand" href="home.php">EXAR</a>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
@@ -45,7 +45,7 @@ if(!isset($_SESSION['logged_in'])){
         <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Hi,    
            <?php if($_SESSION['logged_in']) { ?>
-            <?php echo $_SESSION['name']; ?>!!
+            <?php echo $_SESSION['name']; ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="account.php">My Account</a>

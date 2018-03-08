@@ -49,7 +49,7 @@ class Cl_User
 				throw new Exception( PASSWORD_NOT_MATCH );
 			}
 			$password = md5( $password );
-			$query = "INSERT INTO users (user_id, name, email, password, created) VALUES (NULL, '$name', '$email', '$password', CURRENT_TIMESTAMP)";
+			$query = "INSERT INTO users (user_id, name, email, password, tipo_usuario, created) VALUES (NULL, '$name', '$email', '$password', $tipo_usuario, CURRENT_TIMESTAMP)";
 			if(mysqli_query($this->_con, $query)){
 				mysqli_close($this->_con);
 				return true;
@@ -74,12 +74,13 @@ class Cl_User
 			// escapar de las variables para la seguridad
 			$email = mysqli_real_escape_string( $this->_con,  $trimmed_data['email'] );
 			$password = mysqli_real_escape_string( $this->_con,  $trimmed_data['password'] );
+
 				
 			if((!$email) || (!$password) ) {
 				throw new Exception( LOGIN_FIELDS_MISSING );
 			}
 			$password = md5( $password );
-			$query = "SELECT user_id, name, email, created FROM users where email = '$email' and password = '$password' ";
+			$query = "SELECT user_id, name, email, tipo_usuario, created FROM users where email = '$email' and password = '$password' ";
 			$result = mysqli_query($this->_con, $query);
 			$data = mysqli_fetch_assoc($result);
 			$count = mysqli_num_rows($result);
@@ -166,8 +167,8 @@ class Cl_User
 				$to = $email;
 				$subject = "Nueva solicitud de contraseña";
 				$txt = "Su nueva contraseña ".$password;
-				$headers = "From: admin@obedalvarado.pw" . "\r\n" .
-						"CC: admin@obedalvarado.pw";
+				$headers = "From: admin@utem.pw" . "\r\n" .
+						"CC: admin@utem.pw";
 					
 				mail($to,$subject,$txt,$headers);
 				return true;

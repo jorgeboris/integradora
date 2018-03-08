@@ -1,7 +1,7 @@
 <?php 
 ob_start();
 session_start();
-require_once 'config.php'; 
+require_once 'config.php';
 ?>
 <?php 
 	if( !empty( $_POST )){
@@ -18,6 +18,7 @@ require_once 'config.php';
 	if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']){
 		header('Location: home.php');
 	}
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">

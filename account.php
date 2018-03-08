@@ -7,7 +7,7 @@
 			if($data)$success = PASSOWRD_CHANAGE_SUCCESS;
 		} catch (Exception $e) {
 			$error = $e->getMessage();
-		} 
+		}
 	}
 ?>
 

@@ -20,7 +20,7 @@ footer {
 }
 
 h1 {
-    font-family:Pacifico;
+    
 }
 
 .sidebar {
@@ -60,3 +60,6 @@ input {
     padding: 5px;
 }
 
+a .canali {
+    text-align: center;
+}
